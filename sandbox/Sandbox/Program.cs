@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Sandbox Project.");
+        string message = "";
+        message = message + "5 ";
+        message += "things";
+
+        Console.WriteLine(message);
     }
 }
