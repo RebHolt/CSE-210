@@ -9,7 +9,6 @@ class Program
         while (true)
         {
             string letter = "";
-            bool passed = false;
             string gradeSymbol = "";
             int modulo = 0;
 
@@ -35,8 +34,6 @@ class Program
             if (grade >= 90)
             {
                 letter = "A";
-                passed = true;
-
                 if (gradeSymbol == "+")     //exception (no A+)
                 {
                     gradeSymbol = "";
@@ -50,23 +47,18 @@ class Program
             else if (grade >= 80)
             {
                 letter = "B";
-                passed = true;
-
             }
             else if (grade >= 70)
             {
                 letter = "C";
-                passed = true;
             }
             else if (grade >= 60)
             {
                 letter = "D";
-                passed = true;
             }
             else if (grade < 60 && grade >= 0)
             {
                 letter = "F";
-                passed = false;
 
                 if (gradeSymbol != "")      // exception (no F+ or F-)
                 {

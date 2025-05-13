@@ -1,13 +1,14 @@
 using System;
 using System.Drawing;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        foreach (string color in colors)
-        {
-            Console.WriteLine(color);
-        }
+        List<string> words = new List<string>();
+        words.Add("phone");
+        words.Add("mouse");
+
     }
 }
