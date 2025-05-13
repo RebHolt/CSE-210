@@ -6,9 +6,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> words = new List<string>();
-        words.Add("phone");
-        words.Add("mouse");
 
+        Console.WriteLine("thing1\n" +
+        "thing2\n" +
+        "thing3");
     }
 }
