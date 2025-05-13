@@ -1,13 +1,13 @@
 using System;
+using System.Drawing;
 
 class Program
 {
     static void Main(string[] args)
     {
-        string message = "";
-        message = message + "5 ";
-        message += "things";
-
-        Console.WriteLine(message);
+        foreach (string color in colors)
+        {
+            Console.WriteLine(color);
+        }
     }
 }
