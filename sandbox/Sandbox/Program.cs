@@ -8,25 +8,20 @@ using System.Text;
 using System.Runtime.ExceptionServices;
 using Microsoft.VisualBasic;
 using System.IO.Enumeration;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
     static void Main(string[] args)
     {
-        string yeet = Path.GetFullPath("myFile.txt");
 
-        Console.WriteLine(yeet);
-        string filename = @"myFile.txt";
-        using (StreamWriter outputfile = new StreamWriter(filename))
-        {
-            //add text to file
-            outputfile.WriteLine("Fiasdf");
+        string word = "why";
+        word.Replace("s", "X");
 
-            // use $ to include variables like console.writeline
-            string color = "Blue";
-            outputfile.WriteLine($"Fav color: {color}");
-        }
+        Console.WriteLine($"\nthis is a word\nthis is a new line\n{word}" + "whyyy");
 
+
+        // "this is a sentence that may ""appear,"" in an entry","and stuff"
     }
 }
 

@@ -1,6 +1,1 @@
-Date
-Prompt
-Entryoaopfkeoakfopkaspofekapok
-thing
-2
-3
+"Nov 22, 2003","Prompt Text","dfasdf ""edsfa"" eafdsf"

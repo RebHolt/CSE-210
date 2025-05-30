@@ -29,26 +29,44 @@ public class Journal
 
     public void SaveToFile(string filename)
     {
-        System.IO.File.WriteAllText(filename, string.Empty);        // clear file
-
-        foreach (Entry entry in _entries)
+        using (StreamWriter outputfile = new StreamWriter(filename))         // create new StreamWriter obj, can write to it like console.
         {
-            Console.WriteLine("-- WRITING TO FILE... --");      //DEBUG
-            using (StreamWriter outputfile = File.AppendText(filename))
+            foreach (Entry item in _entries)                                 // for each entry
             {
-                outputfile.WriteLine(entry._date);
-                outputfile.WriteLine(entry._promptText);
-                outputfile.WriteLine(entry._entryText);
+                //format entryText
+                string entryPrepped = item._entryText.Replace("\"", "\"\"");        //replace quotes with double quotes
 
+                outputfile.WriteLine($"\"{item._date}\",\"{item._promptText}\",\"{entryPrepped}\"");
             }
+
+
+        }
+    }
+
+    public void LoadFromFile(string filename)
+    {
+        string[] lines = System.IO.File.ReadAllLines(filename);
+        foreach (string i in lines)
+        {
+            string cleanLine = i.Replace("\"\"", "*");          // replace double quotes with asterisk
+            string[] parts = cleanLine.Split(",\"");            // split ,"
+
+            int count = 0;
+            foreach (string j in parts)
+            {
+                cleanLine = j;
+                cleanLine = cleanLine.Replace("\"", "");
+                cleanLine = cleanLine.Replace("*", "\"");
+
+
+
+                parts[count] = cleanLine;                       // replace parts with cleanLine
+                count++;
+            }
+            Entry entry = new Entry(parts[0], parts[1], parts[2]);      // make new entry obj
+            AddEntry(entry);                                            // Add to journal
         }
 
 
     }
-
-    public void LoadFromFile(string file)
-    {
-
-    }
-
 }
