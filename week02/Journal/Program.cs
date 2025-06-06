@@ -54,8 +54,9 @@ class Program
 
                 userInput = Console.ReadLine();                             // get user input
 
-
-                Entry entry = new Entry(dateText, newPrompt, userInput);    // make new entry obj
+                //makes a new entry object
+                Entry entry = new Entry(dateText, newPrompt, userInput);
+                //Adds entry to the journal 
                 journal.AddEntry(entry);                                    // add entry to journal
             }
             else if (userInput == "2")      // DISPLAY
